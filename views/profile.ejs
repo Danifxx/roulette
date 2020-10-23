@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>AnimeLocker</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ed20920919.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><i class="fas fa-archway"></i> $$$ Welcome Casino Owner $$$</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> <%= user.local.firstName%> </h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <img src="img/roulette.jpg" alt="">
+                        <strong>Name</strong>: <%= user.local.firstName%><br>
+                        <strong>Last Name</strong>: <%= user.local.lastName %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+
+                    </p>
+                    <!-- <strong>password</strong>: <%= user.local.password %> -->
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <h3>Casino Statistics</h3>
+          <ul>
+            <li>
+              <span>Casino Bank: $</span><span><%= casinoOwner[0].casinoBalance %></span></br>
+              <span> Customer Wins: </span><span><%= casinoOwner[0].winCount %></span></br>
+              <span> Customer Losses: </span><span><%= casinoOwner[0].lossCount %></span>
+            </li>
+          </ul>
+
+
+</div>
+<script src="main.js"></script>
+
+</body>
+</html>
